@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="adv speed controller">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="adv">
+    <SubAppNetwork>
+      <FB Name="F_GT" Type="F_GT" x="3895.0" y="1425.0">
+        <Parameter Name="IN2" Value="INT#100"/>
+      </FB>
+      <FB Name="E_CYCLE" Type="E_CYCLE" x="190.0" y="95.0">
+        <Parameter Name="DT" Value="t#250ms"/>
+      </FB>
+      <FB Name="E_SWITCH" Type="E_SWITCH" x="760.0" y="95.0"/>
+      <FB Name="F_GE" Type="F_GE" x="3895.0" y="380.0">
+        <Parameter Name="IN2" Value="INT#90"/>
+      </FB>
+      <FB Name="E_CTUD" Type="E_CTUD" x="2375.0" y="285.0">
+        <Parameter Name="PV" Value="UINT#105"/>
+      </FB>
+      <FB Name="FB_SR" Type="FB_SR" x="1425.0" y="1140.0"/>
+      <EventConnections>
+        <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_GE.REQ" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_GT.REQ" Source="E_CTUD.CO" dx1="360.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_SR.REQ" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="F_GE.IN1" Source="E_CTUD.CV" dx1="345.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_GT.IN1" Source="E_CTUD.CV" dx1="265.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_SR.S1" Source="E_CTUD.QU" dx1="305.0" dx2="-195.0" dy="590.0"/>
+        <Connection Destination="FB_SR.R" Source="E_CTUD.QD" dx1="235.0" dx2="0.0" dy="390.0"/>
+        <Connection Destination="E_SWITCH.G" Source="FB_SR.Q1" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Application Name="advtim"/>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="1315.0" y="690.0">
+    <Attribute Name="Color" Value="212,120,123"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_CYCLE" Type="E_CYCLE" x="665.0" y="285.0">
+          <Parameter Name="DT" Value="t#250ms"/>
+        </FB>
+        <FB Name="E_SWITCH" Type="E_SWITCH" x="1330.0" y="95.0"/>
+        <FB Name="F_GT" Type="F_GT" x="4275.0" y="950.0">
+          <Parameter Name="IN2" Value="INT#100"/>
+        </FB>
+        <FB Name="F_GE" Type="F_GE" x="3895.0" y="190.0">
+          <Parameter Name="IN2" Value="INT#90"/>
+        </FB>
+        <FB Name="E_CTUD" Type="E_CTUD" x="2945.0" y="285.0">
+          <Parameter Name="PV" Value="UINT#105"/>
+        </FB>
+        <FB Name="FB_SR" Type="FB_SR" x="1425.0" y="950.0"/>
+        <EventConnections>
+          <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_GE.REQ" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_GT.REQ" Source="E_CTUD.CO" dx1="360.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_SR.REQ" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="F_GE.IN1" Source="E_CTUD.CV" dx1="345.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_GT.IN1" Source="E_CTUD.CV" dx1="265.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_SR.S1" Source="E_CTUD.QU" dx1="305.0" dx2="-195.0" dy="590.0"/>
+          <Connection Destination="FB_SR.R" Source="E_CTUD.QD" dx1="235.0" dx2="0.0" dy="390.0"/>
+          <Connection Destination="E_SWITCH.G" Source="FB_SR.Q1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="adv.F_GT" To="FORTE_PC.EMB_RES.F_GT"/>
+  <Mapping From="adv.E_CYCLE" To="FORTE_PC.EMB_RES.E_CYCLE"/>
+  <Mapping From="adv.E_SWITCH" To="FORTE_PC.EMB_RES.E_SWITCH"/>
+  <Mapping From="adv.F_GE" To="FORTE_PC.EMB_RES.F_GE"/>
+  <Mapping From="adv.E_CTUD" To="FORTE_PC.EMB_RES.E_CTUD"/>
+  <Mapping From="adv.FB_SR" To="FORTE_PC.EMB_RES.FB_SR"/>
+</System>

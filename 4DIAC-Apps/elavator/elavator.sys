@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="elavator">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="lift1">
+    <SubAppNetwork>
+      <FB Name="E_CTU" Type="E_CTU" x="760.0" y="190.0">
+        <Parameter Name="PV" Value="UINT#1"/>
+      </FB>
+      <FB Name="E_PERMIT" Type="E_PERMIT" x="-190.0" y="190.0"/>
+      <FB Name="F_NOT" Type="F_NOT" x="1520.0" y="285.0"/>
+      <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2090.0" y="380.0"/>
+      <FB Name="E_REND" Type="E_REND" x="2755.0" y="475.0"/>
+      <FB Name="LIMIT_SWITCHE_H" Type="E_RESTART" x="-380.0" y="1235.0"/>
+      <FB Name="E_CYCLE_0" Type="E_CYCLE" x="950.0" y="1330.0">
+        <Parameter Name="DT" Value="t#1s"/>
+      </FB>
+      <FB Name="E_MUX_2" Type="E_MUX_2" x="3895.0" y="475.0"/>
+      <FB Name="E_MUX_2_0" Type="E_MUX_2" x="3895.0" y="1330.0"/>
+      <FB Name="E_MERGE" Type="E_MERGE" x="3295.0" y="800.0"/>
+      <FB Name="IN_OUT_DOWN" Type="E_RESTART" x="-380.0" y="2565.0"/>
+      <FB Name="OR" Type="E_MERGE" x="950.0" y="2660.0"/>
+      <FB Name="E_CYCLE_1" Type="E_CYCLE" x="1045.0" y="1995.0">
+        <Parameter Name="DT" Value="T#1s"/>
+      </FB>
+      <FB Name="RS" Type="E_REND" x="1855.0" y="2520.0"/>
+      <FB Name="E_PERMIT_1" Type="E_PERMIT" x="2090.0" y="1900.0"/>
+      <FB Name="E_REND_0" Type="E_REND" x="2850.0" y="1900.0"/>
+      <FB Name="E_MERGE_0" Type="E_MERGE" x="3615.0" y="2030.0"/>
+      <FB Name="IN_OUT_UP" Type="E_RESTART" x="-380.0" y="3420.0"/>
+      <FB Name="E_MERGE_1" Type="E_MERGE" x="950.0" y="3420.0"/>
+      <FB Name="E_REND_1" Type="E_REND" x="1995.0" y="3420.0"/>
+      <FB Name="LIMIT_SWITCH_L" Type="E_RESTART" x="-380.0" y="1900.0"/>
+      <FB Name="F_GE" Type="F_GE" x="1995.0" y="950.0">
+        <Parameter Name="IN2" Value="UINT#2"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="E_CTU.R" Source="E_PERMIT.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_NOT.REQ" Source="E_CTU.CUO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_0.EI" Source="F_NOT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_REND.EI1" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_REND.EI2" Source="E_CYCLE_0.EO" dx1="2110.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE.EI1" Source="E_REND.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2.EI2" Source="E_MERGE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2_0.EI1" Source="E_MERGE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS.EI2" Source="OR.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_1.EI" Source="E_CTU.CUO" dx1="365.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_REND_0.EI1" Source="E_PERMIT_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_REND_0.EI2" Source="E_CYCLE_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE_0.EI1" Source="E_REND_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE_0.EI2" Source="RS.EO" dx1="365.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2.EI1" Source="E_MERGE_0.EO" dx1="395.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2_0.EI2" Source="E_MERGE_0.EO" dx1="-130.0" dx2="0.0" dy="120.0"/>
+        <Connection Destination="E_REND_1.EI2" Source="E_MERGE_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE.EI2" Source="E_REND_1.EO" dx1="290.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_REND_1.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="445.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CYCLE_1.STOP" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTU.CU" Source="LIMIT_SWITCH_L.STOP" dx1="345.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CYCLE_0.STOP" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTU.CU" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CYCLE_0.START" Source="LIMIT_SWITCHE_H.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CYCLE_1.START" Source="LIMIT_SWITCH_L.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OR.EI2" Source="IN_OUT_DOWN.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OR.EI1" Source="IN_OUT_DOWN.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE_1.EI2" Source="IN_OUT_UP.STOP" dx1="165.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MERGE_1.EI1" Source="IN_OUT_UP.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2_0.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2_0.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_MUX_2.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT.EI" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT.EI" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_GE.REQ" Source="E_CTU.CUO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="F_NOT.IN" Source="E_CTU.Q" dx1="85.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_0.PERMIT" Source="F_NOT.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_1.PERMIT" Source="E_CTU.Q" dx1="630.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="F_GE.IN1" Source="E_CTU.CV" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT.PERMIT" Source="F_GE.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="2165.0" y="675.0">
+    <Attribute Name="Color" Value="220,152,237"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_CTU" Type="E_CTU" x="2090.0" y="0.0">
+          <Parameter Name="PV" Value="UINT#1"/>
+        </FB>
+        <FB Name="E_PERMIT" Type="E_PERMIT" x="1235.0" y="0.0"/>
+        <FB Name="IN_OUT_UP" Type="E_RESTART" x="-380.0" y="3420.0"/>
+        <FB Name="E_MERGE_1" Type="E_MERGE" x="950.0" y="3420.0"/>
+        <FB Name="E_REND_1" Type="E_REND" x="1995.0" y="3420.0"/>
+        <FB Name="RS" Type="E_REND" x="1855.0" y="2520.0"/>
+        <FB Name="OR" Type="E_MERGE" x="950.0" y="2660.0"/>
+        <FB Name="IN_OUT_DOWN" Type="E_RESTART" x="-380.0" y="2565.0"/>
+        <FB Name="E_CYCLE_1" Type="E_CYCLE" x="1045.0" y="1995.0">
+          <Parameter Name="DT" Value="T#1s"/>
+        </FB>
+        <FB Name="E_PERMIT_1" Type="E_PERMIT" x="2090.0" y="1900.0"/>
+        <FB Name="E_REND_0" Type="E_REND" x="2850.0" y="1900.0"/>
+        <FB Name="LIMIT_SWITCHE_H" Type="E_RESTART" x="-380.0" y="1235.0"/>
+        <FB Name="E_MERGE" Type="E_MERGE" x="3295.0" y="800.0"/>
+        <FB Name="E_REND" Type="E_REND" x="2755.0" y="475.0"/>
+        <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2090.0" y="950.0"/>
+        <FB Name="F_NOT" Type="F_NOT" x="1425.0" y="665.0"/>
+        <FB Name="E_CYCLE_0" Type="E_CYCLE" x="950.0" y="1330.0">
+          <Parameter Name="DT" Value="t#1s"/>
+        </FB>
+        <FB Name="E_MERGE_0" Type="E_MERGE" x="3615.0" y="2030.0"/>
+        <FB Name="E_MUX_2_0" Type="E_MUX_2" x="4180.0" y="1045.0"/>
+        <FB Name="E_MUX_2" Type="E_MUX_2" x="4085.0" y="190.0"/>
+        <FB Name="LIMIT_SWITCH_L" Type="E_RESTART" x="-380.0" y="1900.0"/>
+        <FB Name="F_GE" Type="F_GE" x="1995.0" y="950.0">
+          <Parameter Name="IN2" Value="UINT#2"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="E_CTU.R" Source="E_PERMIT.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND_1.EI2" Source="E_MERGE_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS.EI2" Source="OR.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_1.EI" Source="E_CTU.CUO" dx1="365.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND_0.EI1" Source="E_PERMIT_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND_0.EI2" Source="E_CYCLE_1.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE.EI2" Source="E_REND_1.EO" dx1="290.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE.EI1" Source="E_REND.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND.EI1" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_NOT.REQ" Source="E_CTU.CUO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.EI" Source="F_NOT.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND.EI2" Source="E_CYCLE_0.EO" dx1="2110.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE_0.EI1" Source="E_REND_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE_0.EI2" Source="RS.EO" dx1="365.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2_0.EI1" Source="E_MERGE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2_0.EI2" Source="E_MERGE_0.EO" dx1="-130.0" dx2="0.0" dy="120.0"/>
+          <Connection Destination="E_MUX_2.EI1" Source="E_MERGE_0.EO" dx1="395.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2.EI2" Source="E_MERGE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2.EI1" Source="START.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2_0.EI1" Source="START.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_0.STOP" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTU.CU" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_0.START" Source="LIMIT_SWITCHE_H.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_1.START" Source="LIMIT_SWITCH_L.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_REND_1.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="445.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_1.STOP" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTU.CU" Source="LIMIT_SWITCH_L.STOP" dx1="345.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OR.EI2" Source="IN_OUT_DOWN.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OR.EI1" Source="IN_OUT_DOWN.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE_1.EI2" Source="IN_OUT_UP.STOP" dx1="165.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MERGE_1.EI1" Source="IN_OUT_UP.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2_0.EI1" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2_0.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_MUX_2.EI1" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT.EI" Source="LIMIT_SWITCH_L.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT.EI" Source="LIMIT_SWITCHE_H.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT.EI" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_GE.REQ" Source="E_CTU.CUO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_PERMIT_1.PERMIT" Source="E_CTU.Q" dx1="630.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_NOT.IN" Source="E_CTU.Q" dx1="85.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.PERMIT" Source="F_NOT.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="F_GE.IN1" Source="E_CTU.CV" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT.PERMIT" Source="F_GE.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="lift1.E_CTU" To="FORTE_PC.EMB_RES.E_CTU"/>
+  <Mapping From="lift1.E_PERMIT" To="FORTE_PC.EMB_RES.E_PERMIT"/>
+  <Mapping From="lift1.F_NOT" To="FORTE_PC.EMB_RES.F_NOT"/>
+  <Mapping From="lift1.E_PERMIT_0" To="FORTE_PC.EMB_RES.E_PERMIT_0"/>
+  <Mapping From="lift1.E_REND" To="FORTE_PC.EMB_RES.E_REND"/>
+  <Mapping From="lift1.LIMIT_SWITCHE_H" To="FORTE_PC.EMB_RES.LIMIT_SWITCHE_H"/>
+  <Mapping From="lift1.E_CYCLE_0" To="FORTE_PC.EMB_RES.E_CYCLE_0"/>
+  <Mapping From="lift1.E_MUX_2" To="FORTE_PC.EMB_RES.E_MUX_2"/>
+  <Mapping From="lift1.E_MUX_2_0" To="FORTE_PC.EMB_RES.E_MUX_2_0"/>
+  <Mapping From="lift1.E_MERGE" To="FORTE_PC.EMB_RES.E_MERGE"/>
+  <Mapping From="lift1.IN_OUT_DOWN" To="FORTE_PC.EMB_RES.IN_OUT_DOWN"/>
+  <Mapping From="lift1.OR" To="FORTE_PC.EMB_RES.OR"/>
+  <Mapping From="lift1.E_CYCLE_1" To="FORTE_PC.EMB_RES.E_CYCLE_1"/>
+  <Mapping From="lift1.RS" To="FORTE_PC.EMB_RES.RS"/>
+  <Mapping From="lift1.E_PERMIT_1" To="FORTE_PC.EMB_RES.E_PERMIT_1"/>
+  <Mapping From="lift1.E_REND_0" To="FORTE_PC.EMB_RES.E_REND_0"/>
+  <Mapping From="lift1.E_MERGE_0" To="FORTE_PC.EMB_RES.E_MERGE_0"/>
+  <Mapping From="lift1.IN_OUT_UP" To="FORTE_PC.EMB_RES.IN_OUT_UP"/>
+  <Mapping From="lift1.E_MERGE_1" To="FORTE_PC.EMB_RES.E_MERGE_1"/>
+  <Mapping From="lift1.E_REND_1" To="FORTE_PC.EMB_RES.E_REND_1"/>
+  <Mapping From="lift1.LIMIT_SWITCH_L" To="FORTE_PC.EMB_RES.LIMIT_SWITCH_L"/>
+  <Mapping From="lift1.F_GE" To="FORTE_PC.EMB_RES.F_GE"/>
+</System>
