@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Starting ListenForShutdown.py"
+    /usr/local/bin/ListenForShutdown.py &
+    ;;
+  stop)
+    echo "Stopping ListenForShutdown.py"
+    pkill -f /usr/local/bin/ListenForShutdown.py
+    ;;
+  *)
+    echo "Usage: /etc/init.d/ListenForShutdown.sh {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
