@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="SpeedControl_Example">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="speed_control">
+    <SubAppNetwork>
+      <FB Name="E_CYCLE_0" Type="E_CYCLE" x="190.0" y="665.0">
+        <Parameter Name="DT" Value="t#250ms"/>
+      </FB>
+      <FB Name="accelerator" Type="F_GE" x="2375.0" y="95.0">
+        <Parameter Name="IN2" Value="UINT#70"/>
+      </FB>
+      <FB Name="brake" Type="F_GT" x="2375.0" y="950.0">
+        <Parameter Name="IN2" Value="UINT#90"/>
+      </FB>
+      <FB Name="FB_SLIDER" Type="FB_SLIDER" x="1045.0" y="380.0">
+        <Parameter Name="IVAL" Value="0"/>
+        <Parameter Name="FGD" Value="red"/>
+        <Parameter Name="BKGD" Value="green"/>
+        <Parameter Name="W" Value="120"/>
+        <Parameter Name="H" Value="20"/>
+        <Parameter Name="DIR" Value="0"/>
+      </FB>
+      <FB Name="OUT_BOOL_1" Type="OUT_BOOL" x="3230.0" y="0.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="accelerator"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <FB Name="OUT_BOOL_2" Type="OUT_BOOL" x="3135.0" y="1235.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="brakes"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <FB Name="FB_BAR_0" Type="FB_BAR" x="3135.0" y="2280.0">
+        <Parameter Name="FGD" Value="red"/>
+        <Parameter Name="BKGD" Value="green"/>
+        <Parameter Name="W" Value="120"/>
+        <Parameter Name="H" Value="20"/>
+        <Parameter Name="DIR" Value="0"/>
+        <Parameter Name="STYLE" Value="0"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="FB_SLIDER.REQ" Source="E_CYCLE_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="accelerator.REQ" Source="FB_SLIDER.IND" dx1="140.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="brake.REQ" Source="FB_SLIDER.IND" dx1="310.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_1.REQ" Source="accelerator.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_2.REQ" Source="brake.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_BAR_0.REQ" Source="FB_SLIDER.IND" dx1="190.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_BAR_0.INIT" Source="FB_SLIDER.INITO" dx1="320.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="accelerator.IN1" Source="FB_SLIDER.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="brake.IN1" Source="FB_SLIDER.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_1.IN" Source="accelerator.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_2.IN" Source="brake.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="FB_BAR_0.IN" Source="FB_SLIDER.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="FBRT_WINDOW" Type="FBRT_WINDOW" x="2215.0" y="1375.0">
+    <Attribute Name="Color" Value="189,231,140"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="BOUNDS" Value="[200,200,500,500]"/>
+    <Parameter Name="GRID" Value="[1,1]"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61505&quot;"/>
+    <Resource Name="PANEL_RESOURCE" Type="PANEL_RESOURCE">
+      <FBNetwork>
+        <FB Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="3325.0" y="-95.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61500"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0" Type="SUBSCRIBE_1" x="3355.0" y="935.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61501"/>
+        </FB>
+        <FB Name="E_CYCLE_0" Type="E_CYCLE" x="190.0" y="665.0">
+          <Parameter Name="DT" Value="t#250ms"/>
+        </FB>
+        <FB Name="FB_SLIDER" Type="FB_SLIDER" x="855.0" y="380.0">
+          <Parameter Name="IVAL" Value="0"/>
+          <Parameter Name="FGD" Value="red"/>
+          <Parameter Name="BKGD" Value="green"/>
+          <Parameter Name="W" Value="120"/>
+          <Parameter Name="H" Value="20"/>
+          <Parameter Name="DIR" Value="0"/>
+        </FB>
+        <FB Name="OUT_BOOL_1" Type="OUT_BOOL" x="4560.0" y="-380.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="accelerator"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="OUT_BOOL_2" Type="OUT_BOOL" x="4560.0" y="665.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="brakes"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="FB_BAR_0" Type="FB_BAR" x="4560.0" y="1900.0">
+          <Parameter Name="FGD" Value="red"/>
+          <Parameter Name="BKGD" Value="green"/>
+          <Parameter Name="W" Value="120"/>
+          <Parameter Name="H" Value="20"/>
+          <Parameter Name="DIR" Value="0"/>
+          <Parameter Name="STYLE" Value="0"/>
+        </FB>
+        <FB Name="PUBLISH_1_2" Type="PUBLISH_1" x="2090.0" y="190.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61502"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="FB_SLIDER.REQ" Source="E_CYCLE_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_BAR_0.REQ" Source="FB_SLIDER.IND" dx1="190.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_0.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_0.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE_0.STOP" Source="START.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.REQ" Source="FB_SLIDER.IND" dx1="190.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.INIT" Source="FB_SLIDER.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1.INIT" Source="PUBLISH_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0.INIT" Source="PUBLISH_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.INIT" Source="SUBSCRIBE_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.REQ" Source="SUBSCRIBE_1.IND" dx1="200.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_2.INIT" Source="SUBSCRIBE_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_2.REQ" Source="SUBSCRIBE_1_0.IND" dx1="185.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_BAR_0.INIT" Source="FB_SLIDER.INITO" dx1="320.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_SLIDER.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="FB_SLIDER.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="FB_BAR_0.IN" Source="FB_SLIDER.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.SD_1" Source="FB_SLIDER.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.IN" Source="SUBSCRIBE_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_2.IN" Source="SUBSCRIBE_1_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="475.0" y="1520.0">
+    <Attribute Name="Color" Value="89,157,209"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="PUBLISH_1" Type="PUBLISH_1" x="3420.0" y="0.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61500"/>
+        </FB>
+        <FB Name="PUBLISH_1_0" Type="PUBLISH_1" x="3420.0" y="855.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61501"/>
+        </FB>
+        <FB Name="brake" Type="F_GT" x="2280.0" y="1045.0">
+          <Parameter Name="IN2" Value="UINT#90"/>
+        </FB>
+        <FB Name="accelerator" Type="F_GE" x="2280.0" y="190.0">
+          <Parameter Name="IN2" Value="UINT#70"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="475.0" y="665.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61502"/>
+        </FB>
+        <FB Name="UINT2UINT" Type="UINT2UINT" x="1330.0" y="1425.0"/>
+        <EventConnections>
+          <Connection Destination="PUBLISH_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.REQ" Source="accelerator.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.REQ" Source="brake.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="accelerator.REQ" Source="SUBSCRIBE_1_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="brake.REQ" Source="SUBSCRIBE_1_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UINT2UINT.REQ" Source="SUBSCRIBE_1_2.IND" dx1="165.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="PUBLISH_1_0.SD_1" Source="brake.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.SD_1" Source="accelerator.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="UINT2UINT.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="brake.IN1" Source="UINT2UINT.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="accelerator.IN1" Source="UINT2UINT.OUT" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="speed_control.E_CYCLE_0" To="FBRT_WINDOW.PANEL_RESOURCE.E_CYCLE_0"/>
+  <Mapping From="speed_control.accelerator" To="FORTE_PC.EMB_RES.accelerator"/>
+  <Mapping From="speed_control.brake" To="FORTE_PC.EMB_RES.brake"/>
+  <Mapping From="speed_control.FB_SLIDER" To="FBRT_WINDOW.PANEL_RESOURCE.FB_SLIDER"/>
+  <Mapping From="speed_control.OUT_BOOL_1" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL_1"/>
+  <Mapping From="speed_control.OUT_BOOL_2" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL_2"/>
+  <Mapping From="speed_control.FB_BAR_0" To="FBRT_WINDOW.PANEL_RESOURCE.FB_BAR_0"/>
+  <Segment Name="Ethernet" Type="Ethernet" dx1="1500.0" x="2090.0" y="190.0"/>
+  <Link CommResource="FBRT_WINDOW" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="FORTE_PC" Comment="" SegmentName="Ethernet"/>
+</System>

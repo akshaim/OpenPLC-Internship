@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="lift">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="hmilift">
+    <SubAppNetwork>
+      <FB Name="RS_0" Type="E_REND" x="-2565.0" y="4560.0"/>
+      <FB Name="SR_0" Type="E_REND" x="-2565.0" y="3230.0"/>
+      <FB Name="E_CTU_0" Type="E_CTU" x="855.0" y="-570.0">
+        <Parameter Name="PV" Value="UINT#2"/>
+      </FB>
+      <FB Name="E_PERMIT_4" Type="E_PERMIT" x="190.0" y="-475.0"/>
+      <FB Name="IN_EVENT" Type="IN_EVENT" x="-4750.0" y="1900.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="OUT DOWN"/>
+      </FB>
+      <FB Name="IN_EVENT_0" Type="IN_EVENT" x="-4750.0" y="2850.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="IN UP"/>
+      </FB>
+      <FB Name="IN_EVENT_1" Type="IN_EVENT" x="-4750.0" y="3895.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="OUT UP"/>
+      </FB>
+      <FB Name="IN_EVENT_2" Type="IN_EVENT" x="-4750.0" y="1045.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="IN DOWN"/>
+      </FB>
+      <FB Name="E_RS" Type="E_RS" x="3040.0" y="475.0"/>
+      <FB Name="E_RS_0" Type="E_RS" x="2850.0" y="1520.0"/>
+      <FB Name="E_SR" Type="E_SR" x="1615.0" y="2185.0"/>
+      <FB Name="E_SR_0" Type="E_SR" x="1710.0" y="3135.0"/>
+      <FB Name="LimitSwithHigh" Type="E_DELAY" x="-3610.0" y="0.0">
+        <Parameter Name="DT" Value="t#5s"/>
+      </FB>
+      <FB Name="LimitSwitchLow" Type="E_DELAY" x="-3800.0" y="760.0">
+        <Parameter Name="DT" Value="t#5s"/>
+      </FB>
+      <FB Name="E_R_TRIG" Type="E_R_TRIG" x="-1425.0" y="95.0"/>
+      <FB Name="E_R_TRIG_0" Type="E_R_TRIG" x="-1520.0" y="855.0"/>
+      <FB Name="OUT_BOOL" Type="OUT_BOOL" x="4370.0" y="1140.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="LIFT MOVING DOWN"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <FB Name="OUT_BOOL_0" Type="OUT_BOOL" x="4370.0" y="2185.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="LIFT AT ground FLOOR"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <FB Name="OUT_BOOL_1" Type="OUT_BOOL" x="4370.0" y="95.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="LIFT MOVING UP"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <FB Name="OUT_BOOL_2" Type="OUT_BOOL" x="4370.0" y="3230.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL" Value="LIFT AT 1st FLOOR"/>
+        <Parameter Name="C0" Value="white"/>
+        <Parameter Name="C1" Value="red"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="E_PERMIT_4.EI" Source="E_CTU_0.CUO" dx1="145.0" dx2="0.0" dy="-310.0"/>
+        <Connection Destination="E_CTU_0.R" Source="E_PERMIT_4.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS_0.EI2" Source="IN_EVENT_2.IND" dx1="300.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS_0.EI2" Source="IN_EVENT.IND" dx1="575.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SR_0.EI2" Source="IN_EVENT_0.IND" dx1="190.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SR_0.EI2" Source="IN_EVENT_1.IND" dx1="830.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.R" Source="RS_0.EO" dx1="2310.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.S" Source="SR_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS_0.R" Source="SR_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS_0.S" Source="RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SR_0.S" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS_0.R" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.R" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS_0.EI1" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SR.S" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS_0.R" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.R" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="SR_0.EI1" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_R_TRIG.EI" Source="E_RS.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_R_TRIG_0.EI" Source="E_RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="LimitSwithHigh.START" Source="E_R_TRIG.EO" dx1="0.0" dx2="0.0" dy="-185.0"/>
+        <Connection Destination="LimitSwitchLow.START" Source="E_R_TRIG_0.EO" dx1="0.0" dx2="0.0" dy="-185.0"/>
+        <Connection Destination="OUT_BOOL_1.REQ" Source="E_RS.EO" dx1="360.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL.REQ" Source="E_RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SR.R" Source="OUT_BOOL_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SR_0.R" Source="OUT_BOOL.CNF" dx1="0.0" dx2="0.0" dy="635.0"/>
+        <Connection Destination="SR_0.EI2" Source="IN_EVENT.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS_0.EI2" Source="IN_EVENT_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RS_0.R" Source="SR_0.EO" dx1="160.0" dx2="0.0" dy="205.0"/>
+        <Connection Destination="SR_0.R" Source="RS_0.EO" dx1="230.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_0.REQ" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_0.REQ" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_2.REQ" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_2.REQ" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="E_PERMIT_4.PERMIT" Source="E_CTU_0.Q" dx1="0.0" dx2="0.0" dy="320.0"/>
+        <Connection Destination="E_R_TRIG_0.QI" Source="E_RS_0.Q" dx1="0.0" dx2="0.0" dy="-130.0"/>
+        <Connection Destination="E_R_TRIG.QI" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="245.0"/>
+        <Connection Destination="OUT_BOOL_1.IN" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL.IN" Source="E_RS_0.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_0.IN" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="OUT_BOOL_2.IN" Source="E_SR_0.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="FBRT_WINDOW" Type="FBRT_WINDOW" x="95.0" y="570.0">
+    <Attribute Name="Color" Value="132,241,158"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="BOUNDS" Value="[200,200,500,500]"/>
+    <Parameter Name="GRID" Value="[1,1]"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61505&quot;"/>
+    <Resource Name="PANEL_RESOURCE" Type="PANEL_RESOURCE">
+      <FBNetwork>
+        <FB Name="IN_EVENT_2" Type="IN_EVENT" x="-4845.0" y="1425.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="IN DOWN"/>
+        </FB>
+        <FB Name="IN_EVENT" Type="IN_EVENT" x="-4655.0" y="2470.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="OUT DOWN"/>
+        </FB>
+        <FB Name="IN_EVENT_0" Type="IN_EVENT" x="-4655.0" y="3610.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="IN UP"/>
+        </FB>
+        <FB Name="IN_EVENT_1" Type="IN_EVENT" x="-4655.0" y="4750.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="OUT UP"/>
+        </FB>
+        <FB Name="OUT_BOOL_1" Type="OUT_BOOL" x="-950.0" y="950.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="LIFT MOVING UP"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="OUT_BOOL" Type="OUT_BOOL" x="-855.0" y="2185.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="LIFT MOVING DOWN"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="OUT_BOOL_0" Type="OUT_BOOL" x="-760.0" y="3325.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="LIFT AT ground FLOOR"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="OUT_BOOL_2" Type="OUT_BOOL" x="-760.0" y="4465.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL" Value="LIFT AT 1st FLOOR"/>
+          <Parameter Name="C0" Value="white"/>
+          <Parameter Name="C1" Value="red"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="-2280.0" y="1140.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61504"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_0" Type="SUBSCRIBE_1" x="-2325.0" y="2515.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61505"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_1" Type="SUBSCRIBE_1" x="-2280.0" y="3610.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61506"/>
+        </FB>
+        <FB Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="-2185.0" y="4750.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61507"/>
+        </FB>
+        <FB Name="PUBLISH_0" Type="PUBLISH_0" x="-3705.0" y="1520.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61500"/>
+        </FB>
+        <FB Name="PUBLISH_0_0" Type="PUBLISH_0" x="-3610.0" y="2565.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61501"/>
+        </FB>
+        <FB Name="PUBLISH_0_1" Type="PUBLISH_0" x="-3610.0" y="3610.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61502"/>
+        </FB>
+        <FB Name="PUBLISH_0_2" Type="PUBLISH_0" x="-3610.0" y="4845.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61503"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="IN_EVENT_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="IN_EVENT_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.INIT" Source="SUBSCRIBE_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.REQ" Source="SUBSCRIBE_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL.INIT" Source="SUBSCRIBE_1_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL.REQ" Source="SUBSCRIBE_1_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_0.INIT" Source="SUBSCRIBE_1_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_0.REQ" Source="SUBSCRIBE_1_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_2.INIT" Source="SUBSCRIBE_1_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_2.REQ" Source="SUBSCRIBE_1_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0.REQ" Source="IN_EVENT_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0.INIT" Source="IN_EVENT_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_0.INIT" Source="IN_EVENT.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_0.REQ" Source="IN_EVENT.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_1.INIT" Source="IN_EVENT_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_1.REQ" Source="IN_EVENT_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_2.INIT" Source="IN_EVENT_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_0_2.REQ" Source="IN_EVENT_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1.INIT" Source="PUBLISH_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_0.INIT" Source="PUBLISH_0_0.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_1.INIT" Source="PUBLISH_0_1.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_1_2.INIT" Source="PUBLISH_0_2.INITO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="OUT_BOOL_2.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_0.IN" Source="SUBSCRIBE_1_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL.IN" Source="SUBSCRIBE_1_0.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="OUT_BOOL_1.IN" Source="SUBSCRIBE_1.RD_1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="2565.0" y="665.0">
+    <Attribute Name="Color" Value="197,92,104"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_R_TRIG_0" Type="E_R_TRIG" x="-2185.0" y="1425.0"/>
+        <FB Name="E_R_TRIG" Type="E_R_TRIG" x="-2090.0" y="760.0"/>
+        <FB Name="RS_0" Type="E_REND" x="-2850.0" y="2565.0"/>
+        <FB Name="SR_0" Type="E_REND" x="-1995.0" y="3230.0"/>
+        <FB Name="E_RS" Type="E_RS" x="2755.0" y="665.0"/>
+        <FB Name="E_RS_0" Type="E_RS" x="2375.0" y="1900.0"/>
+        <FB Name="E_SR" Type="E_SR" x="1615.0" y="2185.0"/>
+        <FB Name="E_SR_0" Type="E_SR" x="1710.0" y="3135.0"/>
+        <FB Name="LimitSwithHigh" Type="E_DELAY" x="-4655.0" y="190.0">
+          <Parameter Name="DT" Value="t#5s"/>
+        </FB>
+        <FB Name="LimitSwitchLow" Type="E_DELAY" x="-4655.0" y="950.0">
+          <Parameter Name="DT" Value="t#5s"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0" Type="SUBSCRIBE_0" x="-4750.0" y="1615.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61500"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0_0" Type="SUBSCRIBE_0" x="-4750.0" y="2375.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61501"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0_1" Type="SUBSCRIBE_0" x="-4750.0" y="3135.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61502"/>
+        </FB>
+        <FB Name="SUBSCRIBE_0_2" Type="SUBSCRIBE_0" x="-4750.0" y="3895.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61503"/>
+        </FB>
+        <FB Name="PUBLISH_1" Type="PUBLISH_1" x="3900.0" y="800.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61504"/>
+        </FB>
+        <FB Name="PUBLISH_1_0" Type="PUBLISH_1" x="3895.0" y="1710.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61505"/>
+        </FB>
+        <FB Name="PUBLISH_1_1" Type="PUBLISH_1" x="3895.0" y="2565.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61506"/>
+        </FB>
+        <FB Name="PUBLISH_1_2" Type="PUBLISH_1" x="3895.0" y="3515.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.192.0.2:61507"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="E_RS.R" Source="RS_0.EO" dx1="2310.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.S" Source="SR_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_R_TRIG.EI" Source="E_RS.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS_0.R" Source="SR_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS_0.S" Source="RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_R_TRIG_0.EI" Source="E_RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwithHigh.START" Source="E_R_TRIG.EO" dx1="0.0" dx2="0.0" dy="-185.0"/>
+          <Connection Destination="E_SR_0.S" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS_0.R" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.R" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS_0.EI1" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwitchLow.START" Source="E_R_TRIG_0.EO" dx1="0.0" dx2="0.0" dy="-185.0"/>
+          <Connection Destination="E_SR.S" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS_0.R" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.R" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SR_0.EI1" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SUBSCRIBE_0_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.REQ" Source="E_RS.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.REQ" Source="E_RS_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SR.R" Source="PUBLISH_1.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SR_0.R" Source="PUBLISH_1_0.CNF" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS_0.EI2" Source="SUBSCRIBE_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS_0.EI2" Source="SUBSCRIBE_0_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SR_0.EI2" Source="SUBSCRIBE_0_1.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SR_0.EI2" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwithHigh.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwitchLow.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwithHigh.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="LimitSwitchLow.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS_0.EI2" Source="SUBSCRIBE_0_2.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="SR_0.EI2" Source="SUBSCRIBE_0_0.IND" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RS_0.R" Source="SR_0.EO" dx1="160.0" dx2="0.0" dy="205.0"/>
+          <Connection Destination="SR_0.R" Source="RS_0.EO" dx1="230.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.REQ" Source="E_SR_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.REQ" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.REQ" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.REQ" Source="LimitSwithHigh.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.REQ" Source="LimitSwitchLow.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_R_TRIG.QI" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="245.0"/>
+          <Connection Destination="E_R_TRIG_0.QI" Source="E_RS_0.Q" dx1="0.0" dx2="0.0" dy="-130.0"/>
+          <Connection Destination="PUBLISH_1.SD_1" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_0.SD_1" Source="E_RS_0.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_1.SD_1" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="PUBLISH_1_2.SD_1" Source="E_SR_0.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="hmilift.RS_0" To="FORTE_PC.EMB_RES.RS_0"/>
+  <Mapping From="hmilift.SR_0" To="FORTE_PC.EMB_RES.SR_0"/>
+  <Mapping From="hmilift.IN_EVENT" To="FBRT_WINDOW.PANEL_RESOURCE.IN_EVENT"/>
+  <Mapping From="hmilift.IN_EVENT_0" To="FBRT_WINDOW.PANEL_RESOURCE.IN_EVENT_0"/>
+  <Mapping From="hmilift.IN_EVENT_1" To="FBRT_WINDOW.PANEL_RESOURCE.IN_EVENT_1"/>
+  <Mapping From="hmilift.IN_EVENT_2" To="FBRT_WINDOW.PANEL_RESOURCE.IN_EVENT_2"/>
+  <Mapping From="hmilift.E_RS" To="FORTE_PC.EMB_RES.E_RS"/>
+  <Mapping From="hmilift.E_RS_0" To="FORTE_PC.EMB_RES.E_RS_0"/>
+  <Mapping From="hmilift.E_SR" To="FORTE_PC.EMB_RES.E_SR"/>
+  <Mapping From="hmilift.E_SR_0" To="FORTE_PC.EMB_RES.E_SR_0"/>
+  <Mapping From="hmilift.LimitSwithHigh" To="FORTE_PC.EMB_RES.LimitSwithHigh"/>
+  <Mapping From="hmilift.LimitSwitchLow" To="FORTE_PC.EMB_RES.LimitSwitchLow"/>
+  <Mapping From="hmilift.E_R_TRIG" To="FORTE_PC.EMB_RES.E_R_TRIG"/>
+  <Mapping From="hmilift.E_R_TRIG_0" To="FORTE_PC.EMB_RES.E_R_TRIG_0"/>
+  <Mapping From="hmilift.OUT_BOOL" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL"/>
+  <Mapping From="hmilift.OUT_BOOL_0" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL_0"/>
+  <Mapping From="hmilift.OUT_BOOL_1" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL_1"/>
+  <Mapping From="hmilift.OUT_BOOL_2" To="FBRT_WINDOW.PANEL_RESOURCE.OUT_BOOL_2"/>
+  <Segment Name="Ethernet" Type="Ethernet" dx1="1500.0" x="1805.0" y="190.0"/>
+  <Link CommResource="FBRT_WINDOW" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="FORTE_PC" Comment="" SegmentName="Ethernet"/>
+</System>

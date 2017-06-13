@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.fordiac.ide.model.ui:UISystemConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:libraryElement="org.fordiac.ide.model.libraryElement" xmlns:org.fordiac.ide.model.ui="org.fordiac.ide.model.ui">
+  <children xsi:type="org.fordiac.ide.model.ui:DeviceView" deviceElement="//@systemConfigNetwork/@devices.0">
+    <position x="326" y="222"/>
+    <backgroundColor red="189" green="205" blue="120"/>
+    <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@varDeclarations.0"/>
+    <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@varDeclarations.1"/>
+    <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@varDeclarations.2"/>
+    <resourceContainerView showContent="true">
+      <resources resourceElement="//@systemConfigNetwork/@devices.0/@resource.0">
+        <uIResourceDiagram resourceElement="//@systemConfigNetwork/@devices.0/@resource.0" activeNetwork="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@fbNetworks.0">
+          <children xsi:type="org.fordiac.ide.model.ui:FBView" fb="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0">
+            <position x="-114" y="247"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0" outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.0 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.2 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.5 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.7 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.32 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.33 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.34 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.35" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork"/>
+            <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.1" outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.1 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.3 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.4 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.6" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork"/>
+            <interfaceElements iInterfaceElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.2" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="114" y="-38"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.0"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.0 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.1" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.10 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.14 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.18 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.26" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.0/@interfaceElements.5"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.0"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="114" y="190"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.1"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.2 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.3" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.20 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.27 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.28 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.29" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.1/@interfaceElements.5"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.1"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="114" y="380"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.2"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.4 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.5" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.9 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.12 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.19 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.30" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.2/@interfaceElements.5"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.2"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="114" y="570"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.3"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.6 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.7" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.8 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.13 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.16 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.31" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.3/@interfaceElements.5"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.3"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="1007" y="551"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.6"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.35" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.23" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.11" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.2"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.3"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.5"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.4"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.6"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.7"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.8"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.6/@interfaceElements.9"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.6"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="627" y="494"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.11"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.8 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.29" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.11/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.9 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.10" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.11/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.23" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.11/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.11" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.11/@interfaceElements.3"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.11"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="627" y="304"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.10"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.12 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.28" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.10/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.13 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.14" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.10/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.24" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.10/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.15" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.10/@interfaceElements.3"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.10"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="1007" y="342"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.7"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.34" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.24" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.15" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.2"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.3"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.5"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.4"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.6"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.7"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.8"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.7/@interfaceElements.9"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.7"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="627" y="114"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.9"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.26 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.30" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.9/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.16 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.27" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.9/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.25" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.9/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.17" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.9/@interfaceElements.3"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.9"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="988" y="133"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.5"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.33" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.25" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.17" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.2"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.3"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.5"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.4"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.6"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.7"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.8"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.5/@interfaceElements.9"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.5"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="627" y="-95"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.8"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.18 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.31" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.8/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.19 //@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.20" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.8/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.22" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.8/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements outConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.21" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.8/@interfaceElements.3"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.8"/>
+          </children>
+          <children xsi:type="org.fordiac.ide.model.ui:FBView">
+            <position x="988" y="-76"/>
+            <backgroundColor red="192" green="192" blue="192"/>
+            <fb href="motor_control.xml#//@fbNetwork/@fBs.4"/>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.32" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventInputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.0"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.22" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventInputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.1"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.2"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.3"/>
+            </interfaceElements>
+            <interfaceElements inConnections="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@connections.21" fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.2"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.4"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.3"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.5"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.4"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.6"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventOutputs.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.7"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:Event" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventOutputs.1"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.8"/>
+            </interfaceElements>
+            <interfaceElements fbNetwork="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork">
+              <iInterfaceElement xsi:type="libraryElement:VarDeclaration" href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@outputVars.0"/>
+              <applicationInterfaceElement href="motor_control.xml#//@children.4/@interfaceElements.9"/>
+            </interfaceElements>
+            <applicationFB href="motor_control.xml#//@children.4"/>
+          </children>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.0" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.1" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.1" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.2" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.3" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.1" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.4" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.1" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.5" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.6" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.1" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.7" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.8" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.9" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.10" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@dataConnections.0" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.3" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.5/@interfaceElements.4"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.11" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.12" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.13" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@dataConnections.1" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.3" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.8/@interfaceElements.4"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.14" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@dataConnections.2" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.3" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.10/@interfaceElements.4"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.15" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.16" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.17" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@dataConnections.3" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.3" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.12/@interfaceElements.4"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.18" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.2" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.12/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.19" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.2" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.5/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.20" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.2" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.8/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.21" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.2" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.10/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.22" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.1/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.23" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.1"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.24" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.7/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.25" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.2/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.6/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.26" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.3/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.9/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.27" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.4/@interfaceElements.4" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.11/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.28" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.12/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.29" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.10/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.30" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.8/@interfaceElements.0"/>
+          <connections xsi:type="org.fordiac.ide.model.ui:ConnectionView" connectionElement="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.31" source="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.0/@interfaceElements.0" destination="//@children.0/@resourceContainerView/@resources.0/@uIResourceDiagram/@children.5/@interfaceElements.0"/>
+          <fbNetworks>
+            <uiFBNetwork href="motor_control.xml#/"/>
+          </fbNetworks>
+          <mappingEditorSize width="-1" height="250"/>
+        </uIResourceDiagram>
+      </resources>
+    </resourceContainerView>
+  </children>
+  <systemConfigNetwork>
+    <devices name="FBRT_WINDOW" identifier="true" profile="HOLOBLOC" typePath="Devices/FBRT_WINDOW.dev">
+      <resource name="PANEL_RESOURCE" identifier="true" type="Resources/PANEL_RESOURCE.res">
+        <fBNetwork>
+          <fBs xsi:type="libraryElement:ResourceTypeFB" name="START" identifier="true" id="_RkKKcEHtEeeCCbA3SGSBLA" resourceTypeFB="true" fbtPath="events/E_RESTART.fbt">
+            <interface>
+              <eventOutputs name="COLD" comment="Cold Restart" outputConnections="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.0 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.2 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.5 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.7 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.28 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.29 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.30 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.31"/>
+              <eventOutputs name="WARM" comment="Warm Restart" outputConnections="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.1 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.3 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.4 //@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@eventConnections.6"/>
+              <eventOutputs name="STOP" comment="Resource is Stopping"/>
+            </interface>
+            <position x="-114" y="247"/>
+          </fBs>
+          <dataConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@outputVars.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@inputVars.2"/>
+          </dataConnections>
+          <dataConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@outputVars.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@inputVars.2"/>
+          </dataConnections>
+          <dataConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@outputVars.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@inputVars.2"/>
+          </dataConnections>
+          <dataConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@outputVars.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@inputVars.2"/>
+          </dataConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.1">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.1">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.1">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.1">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections dx1="68">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections dx1="50">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections dx1="46">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections dx1="260">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections dx1="76">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections dx1="39">
+            <source href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventOutputs.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventOutputs.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventOutputs.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventOutputs.0"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.0/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.1"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.10/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.1/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.11/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.2/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.9/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections>
+            <source href="motor_control.xml#//@fbNetwork/@fBs.3/@interface/@eventOutputs.1"/>
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.8/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.4/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.5/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.7/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <eventConnections resourceConnection="true" source="//@systemConfigNetwork/@devices.0/@resource.0/@fBNetwork/@fBs.0/@interface/@eventOutputs.0">
+            <destination href="motor_control.xml#//@fbNetwork/@fBs.6/@interface/@eventInputs.0"/>
+          </eventConnections>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.0"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.1"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.2"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.3"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.6"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.11"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.10"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.7"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.9"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.5"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.8"/>
+          <mappedFBs href="motor_control.xml#//@fbNetwork/@fBs.4"/>
+        </fBNetwork>
+        <varDeclarations name="ROWS" comment="Rows(if any)in grid layout" isInput="true" arraySize="-1" typeName="DINT">
+          <value/>
+        </varDeclarations>
+        <varDeclarations name="COLS" comment="Columns(if any)in grid layout" isInput="true" arraySize="-1" typeName="DINT">
+          <value/>
+        </varDeclarations>
+      </resource>
+      <varDeclarations name="BOUNDS" comment="Initial[x,y,width,height]" isInput="true" arraySize="4" typeName="DINT" array="true">
+        <value value="[100,100,250,250]"/>
+      </varDeclarations>
+      <varDeclarations name="GRID" comment="Grid layout[rows,cols]" isInput="true" arraySize="2" typeName="DINT" array="true">
+        <value value="[20,20]"/>
+      </varDeclarations>
+      <varDeclarations name="MGR_ID" comment="Device manager socket ID" isInput="true" arraySize="-1" typeName="WSTRING">
+        <value value="&quot;localhost:61505&quot;"/>
+        <varInitialization initialValue="&quot;localhost:61499&quot;"/>
+      </varDeclarations>
+    </devices>
+  </systemConfigNetwork>
+</org.fordiac.ide.model.ui:UISystemConfiguration>
