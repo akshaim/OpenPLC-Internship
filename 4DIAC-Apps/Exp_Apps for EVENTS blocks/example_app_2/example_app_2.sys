@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="example_app_2">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="ExpApp2">
+    <SubAppNetwork>
+      <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2850.0" y="950.0"/>
+      <FB Name="E_PERMIT" Type="E_PERMIT" x="2850.0" y="380.0"/>
+      <FB Name="E_RS" Type="E_RS" x="4275.0" y="570.0"/>
+      <FB Name="E_SWITCH" Type="E_SWITCH" x="1045.0" y="855.0"/>
+      <FB Name="E_CYCLE" Type="E_CYCLE" x="285.0" y="855.0">
+        <Parameter Name="DT" Value="t#1s"/>
+      </FB>
+      <FB Name="E_CTUD" Type="E_CTUD" x="2090.0" y="475.0">
+        <Parameter Name="PV" Value="50"/>
+      </FB>
+      <FB Name="E_DELAY" Type="E_DELAY" x="3610.0" y="95.0">
+        <Parameter Name="DT" Value="t#5s"/>
+      </FB>
+      <FB Name="E_DELAY_0" Type="E_DELAY" x="3610.0" y="760.0">
+        <Parameter Name="DT" Value="t#5s"/>
+      </FB>
+      <FB Name="RED_LED" Type="QX" x="1805.0" y="1900.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="PARAMS" Value="1"/>
+      </FB>
+      <FB Name="GREEN_LED" Type="QX" x="2755.0" y="1900.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="PARAMS" Value="2"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="205.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_0.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTUD.R" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="690.0"/>
+        <Connection Destination="E_CTUD.LD" Source="E_PERMIT.EO" dx1="0.0" dx2="-250.0" dy="-415.0"/>
+        <Connection Destination="E_DELAY.START" Source="E_CTUD.RO" dx1="180.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_DELAY_0.START" Source="E_CTUD.LDO" dx1="185.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.R" Source="E_DELAY.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.S" Source="E_DELAY_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RED_LED.REQ" Source="E_CTUD.CO" dx1="150.0" dx2="185.0" dy="130.0"/>
+        <Connection Destination="GREEN_LED.REQ" Source="E_CTUD.CO" dx1="55.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="E_SWITCH.G" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="560.0"/>
+        <Connection Destination="E_PERMIT_0.PERMIT" Source="E_CTUD.QD" dx1="275.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT.PERMIT" Source="E_CTUD.QU" dx1="365.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="RED_LED.OUT" Source="E_CTUD.QU" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="GREEN_LED.OUT" Source="E_CTUD.QD" dx1="395.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="RaspberryPI" Type="RaspberryPI" x="2205.0" y="1030.0">
+    <Attribute Name="Color" Value="53,77,237"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;192.168.1.189:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2850.0" y="950.0"/>
+        <FB Name="E_PERMIT" Type="E_PERMIT" x="2850.0" y="380.0"/>
+        <FB Name="E_RS" Type="E_RS" x="4275.0" y="570.0"/>
+        <FB Name="E_SWITCH" Type="E_SWITCH" x="1045.0" y="855.0"/>
+        <FB Name="E_CYCLE" Type="E_CYCLE" x="285.0" y="855.0">
+          <Parameter Name="DT" Value="t#1s"/>
+        </FB>
+        <FB Name="E_CTUD" Type="E_CTUD" x="2090.0" y="475.0">
+          <Parameter Name="PV" Value="50"/>
+        </FB>
+        <FB Name="E_DELAY" Type="E_DELAY" x="3610.0" y="95.0">
+          <Parameter Name="DT" Value="t#5s"/>
+        </FB>
+        <FB Name="E_DELAY_0" Type="E_DELAY" x="3610.0" y="760.0">
+          <Parameter Name="DT" Value="t#5s"/>
+        </FB>
+        <FB Name="RED_LED" Type="QX" x="1615.0" y="1900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="PARAMS" Value="1"/>
+        </FB>
+        <FB Name="GREEN_LED" Type="QX" x="2755.0" y="1900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="PARAMS" Value="2"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="205.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.R" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="690.0"/>
+          <Connection Destination="E_CTUD.LD" Source="E_PERMIT.EO" dx1="0.0" dx2="-250.0" dy="-415.0"/>
+          <Connection Destination="E_PERMIT.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_DELAY.START" Source="E_CTUD.RO" dx1="180.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.R" Source="E_DELAY.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_DELAY_0.START" Source="E_CTUD.LDO" dx1="185.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.S" Source="E_DELAY_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RED_LED.REQ" Source="E_CTUD.CO" dx1="150.0" dx2="185.0" dy="130.0"/>
+          <Connection Destination="GREEN_LED.REQ" Source="E_CTUD.CO" dx1="55.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.STOP" Source="START.STOP" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RED_LED.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="GREEN_LED.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RED_LED.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="GREEN_LED.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_SWITCH.G" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="560.0"/>
+          <Connection Destination="E_PERMIT.PERMIT" Source="E_CTUD.QU" dx1="365.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.PERMIT" Source="E_CTUD.QD" dx1="275.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="RED_LED.OUT" Source="E_CTUD.QU" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="GREEN_LED.OUT" Source="E_CTUD.QD" dx1="395.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="ExpApp2.E_PERMIT_0" To="RaspberryPI.EMB_RES.E_PERMIT_0"/>
+  <Mapping From="ExpApp2.E_PERMIT" To="RaspberryPI.EMB_RES.E_PERMIT"/>
+  <Mapping From="ExpApp2.E_RS" To="RaspberryPI.EMB_RES.E_RS"/>
+  <Mapping From="ExpApp2.E_SWITCH" To="RaspberryPI.EMB_RES.E_SWITCH"/>
+  <Mapping From="ExpApp2.E_CYCLE" To="RaspberryPI.EMB_RES.E_CYCLE"/>
+  <Mapping From="ExpApp2.E_CTUD" To="RaspberryPI.EMB_RES.E_CTUD"/>
+  <Mapping From="ExpApp2.E_DELAY" To="RaspberryPI.EMB_RES.E_DELAY"/>
+  <Mapping From="ExpApp2.E_DELAY_0" To="RaspberryPI.EMB_RES.E_DELAY_0"/>
+  <Mapping From="ExpApp2.RED_LED" To="RaspberryPI.EMB_RES.RED_LED"/>
+  <Mapping From="ExpApp2.GREEN_LED" To="RaspberryPI.EMB_RES.GREEN_LED"/>
+</System>

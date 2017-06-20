@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="Example_App_1">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="ExApp1">
+    <SubAppNetwork>
+      <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2950.0" y="1050.0"/>
+      <FB Name="E_PERMIT_1" Type="E_PERMIT" x="2950.0" y="480.0"/>
+      <FB Name="E_RS" Type="E_RS" x="4375.0" y="670.0"/>
+      <FB Name="E_SWITCH" Type="E_SWITCH" x="1145.0" y="955.0"/>
+      <FB Name="E_CYCLE" Type="E_CYCLE" x="385.0" y="955.0">
+        <Parameter Name="DT" Value="t#1s"/>
+      </FB>
+      <FB Name="E_CTUD" Type="E_CTUD" x="2190.0" y="575.0">
+        <Parameter Name="PV" Value="100"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_0.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="205.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_1.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.S" Source="E_PERMIT_1.EO" dx1="260.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RS.R" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="E_SWITCH.G" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="560.0"/>
+        <Connection Destination="E_PERMIT_1.PERMIT" Source="E_CTUD.QU" dx1="365.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_PERMIT_0.PERMIT" Source="E_CTUD.QD" dx1="275.0" dx2="0.0" dy="0.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="FORTE_PC" Type="FORTE_PC" x="2445.0" y="780.0">
+    <Attribute Name="Color" Value="197,52,101"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_PERMIT_0" Type="E_PERMIT" x="2950.0" y="1050.0"/>
+        <FB Name="E_PERMIT_1" Type="E_PERMIT" x="2950.0" y="480.0"/>
+        <FB Name="E_RS" Type="E_RS" x="4375.0" y="670.0"/>
+        <FB Name="E_SWITCH" Type="E_SWITCH" x="1145.0" y="955.0"/>
+        <FB Name="E_CYCLE" Type="E_CYCLE" x="385.0" y="955.0">
+          <Parameter Name="DT" Value="t#1s"/>
+        </FB>
+        <FB Name="E_CTUD" Type="E_CTUD" x="2190.0" y="575.0">
+          <Parameter Name="PV" Value="100"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="E_RS.R" Source="E_PERMIT_0.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RS.S" Source="E_PERMIT_1.EO" dx1="260.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CU" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CTUD.CD" Source="E_SWITCH.EO1" dx1="205.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_1.EI" Source="E_CTUD.CO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.STOP" Source="START.STOP" dx1="165.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_SWITCH.G" Source="E_RS.Q" dx1="0.0" dx2="0.0" dy="560.0"/>
+          <Connection Destination="E_PERMIT_1.PERMIT" Source="E_CTUD.QU" dx1="365.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_PERMIT_0.PERMIT" Source="E_CTUD.QD" dx1="275.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="ExApp1.E_PERMIT_0" To="FORTE_PC.EMB_RES.E_PERMIT_0"/>
+  <Mapping From="ExApp1.E_PERMIT_1" To="FORTE_PC.EMB_RES.E_PERMIT_1"/>
+  <Mapping From="ExApp1.E_RS" To="FORTE_PC.EMB_RES.E_RS"/>
+  <Mapping From="ExApp1.E_SWITCH" To="FORTE_PC.EMB_RES.E_SWITCH"/>
+  <Mapping From="ExApp1.E_CYCLE" To="FORTE_PC.EMB_RES.E_CYCLE"/>
+  <Mapping From="ExApp1.E_CTUD" To="FORTE_PC.EMB_RES.E_CTUD"/>
+</System>

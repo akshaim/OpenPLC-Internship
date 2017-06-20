@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Name="Example_App_3">
+  <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Name="ExpApp3">
+    <SubAppNetwork>
+      <FB Name="E_CYCLE" Type="E_CYCLE" x="765.0" y="480.0">
+        <Parameter Name="DT" Value="t#10ms"/>
+      </FB>
+      <FB Name="E_SWITCH" Type="E_SWITCH" x="1715.0" y="480.0"/>
+      <FB Name="E_SR" Type="E_SR" x="3425.0" y="480.0"/>
+      <FB Name="QX" Type="QX" x="4185.0" y="385.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="PARAMS" Value="1"/>
+      </FB>
+      <FB Name="E_RDELAY" Type="E_RDELAY" x="2665.0" y="385.0">
+        <Parameter Name="DT" Value="t#5ms"/>
+      </FB>
+      <FB Name="QX_0" Type="QX" x="4180.0" y="1425.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="PARAMS" Value="2"/>
+        <Parameter Name="OUT" Value="1"/>
+      </FB>
+      <EventConnections>
+        <Connection Destination="E_SR.R" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="QX.REQ" Source="E_SR.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_RDELAY.START" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SR.S" Source="E_RDELAY.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+      <DataConnections>
+        <Connection Destination="QX.OUT" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Destination="E_SWITCH.G" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="130.0"/>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Name="RaspberryPI" Type="RaspberryPI" x="2460.0" y="855.0">
+    <Attribute Name="Color" Value="73,149,193"/>
+    <Attribute Name="Profile" Value="HOLOBLOC"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Resource Name="EMB_RES" Type="EMB_RES">
+      <FBNetwork>
+        <FB Name="E_CYCLE" Type="E_CYCLE" x="765.0" y="480.0">
+          <Parameter Name="DT" Value="t#10ms"/>
+        </FB>
+        <FB Name="E_SWITCH" Type="E_SWITCH" x="1615.0" y="475.0"/>
+        <FB Name="E_SR" Type="E_SR" x="3135.0" y="475.0"/>
+        <FB Name="QX" Type="QX" x="3705.0" y="380.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="PARAMS" Value="1"/>
+        </FB>
+        <FB Name="E_RDELAY" Type="E_RDELAY" x="2375.0" y="475.0">
+          <Parameter Name="DT" Value="t#5ms"/>
+        </FB>
+        <FB Name="QX_0" Type="QX" x="3705.0" y="1425.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="PARAMS" Value="2"/>
+          <Parameter Name="OUT" Value="1"/>
+        </FB>
+        <EventConnections>
+          <Connection Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SR.R" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX.REQ" Source="E_SR.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_RDELAY.START" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_SR.S" Source="E_RDELAY.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.START" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="E_CYCLE.STOP" Source="START.STOP" dx1="180.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX_0.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX_0.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX.INIT" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX.INIT" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX_0.REQ" Source="START.COLD" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Destination="QX_0.REQ" Source="START.WARM" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+        <DataConnections>
+          <Connection Destination="E_SWITCH.G" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="130.0"/>
+          <Connection Destination="QX.OUT" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="ExpApp3.E_CYCLE" To="RaspberryPI.EMB_RES.E_CYCLE"/>
+  <Mapping From="ExpApp3.E_SWITCH" To="RaspberryPI.EMB_RES.E_SWITCH"/>
+  <Mapping From="ExpApp3.E_SR" To="RaspberryPI.EMB_RES.E_SR"/>
+  <Mapping From="ExpApp3.QX" To="RaspberryPI.EMB_RES.QX"/>
+  <Mapping From="ExpApp3.E_RDELAY" To="RaspberryPI.EMB_RES.E_RDELAY"/>
+  <Mapping From="ExpApp3.QX_0" To="RaspberryPI.EMB_RES.QX_0"/>
+</System>
