@@ -1,0 +1,27 @@
+Issues and Future Scope in the hardware design-
+
+A. PCB design for baseboard-
+1. Improper relay footprint- pads for coil are too small
+2. Improper footprint for electrolytic tantalum capacitors for LDO- footprint is smaller and inappropriate.
+3. Move the pi-zero breakout towards the relay by 10-20 mm
+4. If you are using LDO to generate 3.3V DC voltage,do not provide it to pi-zero breakout as the pi-zero will be powered by 5V DC through the buck converter.
+
+B. Architecture design for baseboard-
+1. Make provision for 5V DC digital inputs interfacing.
+2. Make provision for 12V DC output.
+3. Make provision for Analog Ground.
+4. Try to implement analog circuitry on the bottom baseboard itself.
+
+C. PCB design for topboard-
+1. Improper footprint for ground breakout- Use standard 2.54mm header strictly.
+2. Improper footprint for analog breakout- Use standard 2.54mm header strictly.
+3. Reduce the size of the topboard by 20-30mm.
+4. Move the pi-zero breakout slightly towards relays by 10-20mm.
+
+D. Future Scope-
+1. Make the hardware compatible to the IEC Industrial Standards.
+2. Make a topmost board having an ethernet ciruitry.
+3. Make efficient power management.
+
+*Please ensure that the buck output is set to strictly 5V DC voltage while using pi. In case of higher voltages,pi will get burnt up.
+
