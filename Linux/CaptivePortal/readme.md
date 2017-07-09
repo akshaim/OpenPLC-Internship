@@ -44,6 +44,8 @@ Copy the content of wpa_supplicant_default.conf to /etc/wpa_supplicant/wpa_suppl
 
 	sudo cp wpa_supplicant_default.conf /etc/wpa_supplicant/
 
+The default files are used during reset operation.
+
 Edit the /etc/hosts and add the following line
 
 	192.168.1.1 OpenPLC.localnet
@@ -77,3 +79,58 @@ Uncomment the line #DAEMON_CONF="" and make it look like this
 
 	DAEMON_CONF="/etc/hostapd/hostapd.conf"
 
+### Configure dnsmasq
+
+Dnsmasq is a software that assigns IP addresses to devices when they connect to the network.
+
+Take a backup copy of the default configuration file
+
+	sudo mv /etc/dnsmasq.conf /etc/dnsmasq_orig.conf
+
+And write your own file
+
+	sudo nano /etc/dnsmasq.conf
+
+And edit it such that it looks like the following: 
+
+	# Never forward addresses in the non-routed address spaces.
+
+	bogus-priv
+
+	#　Add other name servers here, with domain specs if they are for　non-public domains.
+
+	server=/localnet/192.168.1.1
+
+	# Add local-only domains here, queries in these domains are answered　from /etc/hosts or DHCP only.
+
+	local=/localnet/
+
+	# Make all host names resolve to the Raspberry Pi's IP address
+
+	address=/#/192.168.1.1
+
+	# Specify the interface that will listen for DHCP and DNS requests
+
+	interface=wlan0
+	
+	# Set the domain for dnsmasq
+
+	domain=localnet
+
+	# Specify the range of IP addresses the DHCP server will lease out to devices, and the duration of the lease
+
+	dhcp-range=192.168.1.10,192.168.1.254,1h
+
+	# Specify the default route
+
+	dhcp-option=3,192.168.1.1
+
+	# Specify the DNS server address
+
+	dhcp-option=6,192.168.1.1
+
+	# Set the DHCP server to authoritative mode.
+
+	dhcp-authoritative
+
+Reboot the pi to see the Pi acting in headless mode. 
