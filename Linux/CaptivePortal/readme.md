@@ -1,4 +1,4 @@
-## Setting up Captive Portal
+# Headless Mode and Captive Portal
 
 This readme  will describe in detail all the steps that needs to be followed in order to setup the Pi in headless mode and have a
 a Captive Portal open up to give the user a provision to either configure the ethernet interface (eth0) or the wifi interface (wlan0).
@@ -134,3 +134,100 @@ And edit it such that it looks like the following:
 	dhcp-authoritative
 
 Reboot the pi to see the Pi acting in headless mode. 
+
+## Captive Portal
+
+Nginx is the server that we are using to host the Captive Portal. 
+
+The default file present in the location /etc/nginx/sites-available/ is the configuration file that tells nginx where the files for the sites
+are available (root directory) and how to handle client requests. On opening the file, it can be seen that /var/www/html/ is the root
+directory for keeping the site files.
+
+So, copy all the files present in the folder SiteFiles to the root directory. 
+
+	sudo cp SiteFiles/* /var/www/html
+
+The line below the root /var/www/html/ in the default configuration file contains the list of default files that the nginx will execute. Here
+replace the default file nginx-debian.html with homepage.html to open that page.
+
+Add the following lines to the file for the captive portal:
+
+	# Redirects requests for /generate_204 to open the captive portal screen                
+
+	     location /generate_204 {                                                                                         
+
+	            return 302  http://OpenPLC.localnet/homepage.html                                                
+
+	     }        
+
+Find the following lines in the file
+
+	location / {
+
+	                # First attempt to serve request as file, then
+
+	                # as directory, then fall back to displaying a 404.
+
+	                try_files $uri $uri/ =404;
+
+	        }
+
+And replace them with the following lines
+
+	# Redirect requests for files that don't exist to the OpenPLC page
+
+        location / {
+
+                try_files $uri $uri/ /homepage.html;
+
+        }
+
+The Captive Portal is used to configure the interfaces. This is done by a PHP script at the backend and this is basically done by rewriting
+certain files namely /etc/network/interfaces and /etc/wpa_supplicant/wpa_supplicant.conf files and by rebooting the Pi.
+
+Nginx runs its server with its default group and user 'www-data'. Therefore the user and the group ownership of these files as well as the
+SiteFiles should be changed to www-data.
+
+	sudo chown -R www-data:www-data /var/www/html
+
+	sudo chown www-data:www-data /etc/network/interfaces
+
+	sudo chown www-data:www-data /etc/wpa_supplicant/wpa_supplicant.conf
+
+Rewriting of files is done by the Linux Utility SED (Stream EDitor). What sed does is, it creates a new copy of the file, edits it and
+replaces it with the existing file. Therefore we need to provide permissions for the directories containing these files as well. This is
+again done by chown command.
+
+	sudo chown www-data:www-data /etc/network
+
+	sudo chown www-data:www-data /etc/wpa_supplicant
+
+Now, provide appropriate limited read, write and execute permissions to these files using the chmod command. 
+
+	sudo chmod 755 pathToFile
+
+Execute 
+
+	sudo chmod u+s /sbin/reboot
+
+so that all users can run the reboot command without password. 
+
+Reboot the Pi and we will have a Captive Portal that can be used to configure interfaces. 
+
+The captive portal allows us to do one of the three things:
+
+1. Connect to an existing wifi network through wlan0 interface.
+
+2. Change the static ip of the wlan0 interface.
+
+3. Change the static ip of the eth0 interface.
+
+Finally, place the script network_startup.sh script anywhere and add the following line to the /etc/rc.local file before the last line
+
+	/path/to/your/file/network_startup.sh || exit 1
+
+Make sure the script is executable. 
+
+This script configures the static ip to the eth0 interface if wlan0 is not present and does nothing in any of the other two cases.
+Adding it to the rc.local file will run the file on boot. 
+
