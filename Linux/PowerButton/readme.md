@@ -3,11 +3,11 @@
 When powered and shutdown, shorting the pin GPIO3 with GND will wake up the Pi. This is an inbuilt feature available in all models of
 Raspberry Pi. Therefore, this is the wake up functionality.
 
-For implementing the sleep functionality, configure the pin GPIO3 as an interrupt pin that detects falling edge.
+For implementing the sleep functionality, configure any GPIO pin as an interrupt pin that detects falling edge.
 
 The script that does this is PowerButton.py
 
-This file should be placed in the directory /etc/local/bin and should be made executable using the following command
+This file should be placed in the directory /usr/local/bin and should be made executable using the following command
 
 	sudo chmod +x /usr/local/bin/PowerDown.py
 
@@ -24,8 +24,8 @@ By default, the service will be running.
 
 To stop, use 
   
-	sudo /etc/init.d/Power.sh start
+	sudo /etc/init.d/Power.sh stop
 
 To start, use 
  
-	sudo /etc/init.d/Power.sh stop
+	sudo /etc/init.d/Power.sh start

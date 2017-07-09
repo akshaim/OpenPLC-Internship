@@ -1,6 +1,15 @@
 #!/bin/bash
 #Shell script to start and stop the Power Button Service
 
+### BEGIN INIT INFO
+# Provides:              PowerButton.py
+# Required-Start:        $remote_fs $syslog
+# Required-Stop:         #remote_fs $syslog
+# Default-Start:         2 3 4 5
+# Default-Stop:          0 1 6
+### END INIT INFO
+
+
 case "$1" in
   start)                                      #'start' as argument
     /usr/local/bin/PowerButton.py &           #Start executing script in the background
