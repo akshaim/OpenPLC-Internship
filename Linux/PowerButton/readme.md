@@ -30,5 +30,5 @@ To start, use
  
 	sudo /etc/init.d/Power.sh start
 
-NOTE: Use the GPIO pin that is free for the button by looking at the hardware design. The pin can be easily changed by editing the python
+NOTE: Use the GPIO pin that is free for the power button by looking at the hardware design. The pin can be easily changed by editing the python
       code. 
