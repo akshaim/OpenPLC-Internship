@@ -6,12 +6,17 @@ a Captive Portal open up to give the user a provision to either configure the et
 ## Prerequisites
 
 The following packages are required: 
+
                      nginx
+
                      php5-fpm
+
                      hostapd
+
                      dnsmasq
 
 Install them using the command
+
                    sudo apt-get install nginx php5-fpm hostapd dnsmasq
 
 ## Setting up Nginx with PHP
