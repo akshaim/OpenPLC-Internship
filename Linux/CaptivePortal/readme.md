@@ -1,7 +1,7 @@
 # Headless Mode and Captive Portal
 
 This readme  will describe in detail all the steps that needs to be followed in order to setup the Pi in headless mode and have a
-a Captive Portal open up to give the user a provision to either configure the ethernet interface (eth0) or the wifi interface (wlan0).
+Captive Portal open up to give the user a provision to either configure the ethernet interface (eth0) or the wifi interface (wlan0).
 
 ## Prerequisites
 
