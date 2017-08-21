@@ -1,0 +1,44 @@
+Source,/home/vivek/kicadvivekiitb/BASEBOARD/base.sch
+Kicad Rev,Eeschema 4.0.6-e0-6349~53~ubuntu16.04.1
+Generated Date,Thu Jun 22 11:15:30 2017
+
+Title,Design1
+Company,Not Set
+Revision,Not Set
+Date Issue,Not Set
+
+Reference,Value,Library,Library Ref
+U2,ULN2803A,interface,ULN2803A
+C3,100n,device,C
+RL1,G5Q-1,relays,G5Q-1
+RL2,G5Q-1,relays,G5Q-1
+RL3,G5Q-1,relays,G5Q-1
+RL4,G5Q-1,relays,G5Q-1
+D1,D_Zener,device,D_Zener
+D2,D_Zener,device,D_Zener
+D3,D_Zener,device,D_Zener
+D4,D_Zener,device,D_Zener
+J5,CONN_01X12,conn,CONN_01X12
+J1,CONN_01X12,conn,CONN_01X12
+R1,10K,device,R
+R2,10K,device,R
+R3,10K,device,R
+R4,10K,device,R
+R5,10K,device,R
+R6,10K,device,R
+R7,10K,device,R
+R8,10K,device,R
+R9,5K,device,R
+R10,5K,device,R
+R11,5K,device,R
+R12,5K,device,R
+J2,LM2596,conn,CONN_02X02
+C1,22u,device,CP1_Small
+C2,22u,device,CP1_Small
+J4,ANALOG_BK,conn,CONN_01X04
+J6,CONN_02X20,conn,CONN_02X20
+U1,PC817,opto,PC817
+U3,PC817,opto,PC817
+U4,PC817,opto,PC817
+U5,PC817,opto,PC817
+U6,AMS1117,AMS1117,AMS1117

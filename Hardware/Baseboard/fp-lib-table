@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name LM2596)(type KiCad)(uri /home/vivek/kicadvivekiitb/BASEBOARD/LM2596.pretty)(options "")(descr ""))
+)
